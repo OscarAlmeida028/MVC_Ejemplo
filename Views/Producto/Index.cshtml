@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Lista de productos";
+}
+
+<h1>@ViewData["Title"]</h1>
+<button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Create", "Producto")'">Nuevo Producto</button>
+
+
+
+@model List<Producto>
+<h1>Lista de Empleados</h1>
+
+<ul>
+    @foreach (var Producto in Model)
+    {
+        <li>@Producto.IdProducto - @Producto.Nombre - @Producto.Descripcion - @Producto.Cantidad</li>
+    }
+</ul>
+
+<p>Esta es la vista de la lista de productos.</p>
